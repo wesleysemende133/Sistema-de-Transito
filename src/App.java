@@ -1,3 +1,4 @@
+import auditoria.Auditoria;
 import entidades.Condutor;
 import enums.CategoriaCarta;
 import enums.InfracaoCategoria;
@@ -59,6 +60,10 @@ public class App {
             boolean multaValida = false;
             while (!multaValida) {
                 System.out.println("Digite o valor da multa:");
+                System.out.println("LEVE: Valor minimo = 1000; maximo = 3000\n" +
+                                    "MEDIA: Valor minimo = 3001; maximo = 7000 \n" +
+                                    "LEVE: Valor minimo = 7001; maximo = 15000\n" +
+                                    "LEVE: Valor minimo = 1500; maximo = 50000\n");
                 int valor = Integer.parseInt(scanner.nextLine());
                 int multaAntes = infracao.getMulta();
                 infracao.setMulta(valor);
@@ -69,6 +74,9 @@ public class App {
 
             // Associar infração ao condutor
             condutor.adicionarInfrcacao(infracao);
+            
+            // registrar condutor no ficheiro de auditoria
+            Auditoria.registrarCondutor(condutor);
         }
 
         // Mostrar detalhes

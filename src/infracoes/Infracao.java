@@ -2,9 +2,12 @@ package infracoes;
 
 import enums.InfracaoCategoria;
 
+import java.time.LocalDateTime;
+
 public class Infracao {
     private InfracaoCategoria infracaoCategoria;
     private  int multa;
+    private LocalDateTime dataEmissao;
 
     public InfracaoCategoria getInfracaoCategoria() {
         return infracaoCategoria;
@@ -35,8 +38,12 @@ public class Infracao {
         if (valido) {
             this.multa = multa;
             System.out.println("Multa definida: " + multa + " MT");
+            System.out.println("Data de emissão: " + dataEmissao);
         } else {
             System.out.println("Erro: valor da multa inválido para a categoria " + infracaoCategoria);
         }
+    }
+    public LocalDateTime getDataEmissao() {
+        return dataEmissao;
     }
 }
