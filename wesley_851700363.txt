@@ -1,0 +1,6 @@
+===== CONDUTOR =====
+Nome: wesley
+Contacto: 851700363
+Categoria da carta: LIGEIRO
+Infrações:
+ - Categoria: LEVE | Multa: 1000 MT | Data: 29/03/2026 18:07:29

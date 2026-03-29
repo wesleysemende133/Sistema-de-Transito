@@ -1,0 +1,6 @@
+===== CONDUTOR =====
+Nome: wesley semende
+Contacto: 851700363
+Categoria da carta: LIGEIRO
+Infrações:
+ - Categoria: LEVE | Multa: 1500 MT | Data: 29/03/2026 19:01:16 | Descrição: carro mal estacionado

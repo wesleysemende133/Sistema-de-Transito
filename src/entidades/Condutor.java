@@ -3,6 +3,7 @@ package entidades;
 import enums.CategoriaCarta;
 import infracoes.Infracao;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +19,24 @@ public  class Condutor extends Pessoa {
 
     /// Metodo para mostrar detalhes
     @Override
-    public void mostrarDetalhes(){
-        System.out.println("Nome do condutor" + getNome());
-        System.out.println("Contacto: "+ getTelefone());
+    public void mostrarDetalhes() {
+        System.out.println("Nome do condutor: " + getNome());
+        System.out.println("Contacto: " + getTelefone());
         System.out.println("Categoria da carta: " + categoriaCarta);
         System.out.println("Infrações:");
-        for (Infracao i : infracoes) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        for (Infracao i : infracoes) { // aqui era 'infracoes' mas a lista é 'infracao'
+            String dataFormatada = (i.getDataEmissao() != null)
+                    ? i.getDataEmissao().format(formatter)
+                    : "N/A";
+            String descricao = (i.getDescricaoMulta() != null) ? i.getDescricaoMulta() : "N/A";
+
             System.out.println("- " + i.getInfracaoCategoria() +
-                    " | Multa: " + i.getMulta() + " MT");
+                    " | Multa: " + i.getMulta() + " MT" +
+                    " | Data: " + dataFormatada +
+                    " | Descrição: " + descricao);
         }
     }
 

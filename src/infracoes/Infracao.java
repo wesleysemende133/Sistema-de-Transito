@@ -8,6 +8,8 @@ public class Infracao {
     private InfracaoCategoria infracaoCategoria;
     private  int multa;
     private LocalDateTime dataEmissao;
+    private String descricaoMulta;
+
 
     public InfracaoCategoria getInfracaoCategoria() {
         return infracaoCategoria;
@@ -21,6 +23,11 @@ public class Infracao {
     public int getMulta(){
         return multa;
     }
+
+    public String getDecricaoMulta() {
+        return descricaoMulta;
+    }
+
     public void setMulta(int multa) {
         if (infracaoCategoria == null) {
             System.out.println("Defina primeiro a categoria da infração!");
@@ -37,6 +44,7 @@ public class Infracao {
         }
         if (valido) {
             this.multa = multa;
+            this.dataEmissao = LocalDateTime.now();
             System.out.println("Multa definida: " + multa + " MT");
             System.out.println("Data de emissão: " + dataEmissao);
         } else {
@@ -45,5 +53,14 @@ public class Infracao {
     }
     public LocalDateTime getDataEmissao() {
         return dataEmissao;
+    }
+
+    public void setDescricaoMulta(String descricaoMulta) {
+        this.descricaoMulta = descricaoMulta;
+        System.out.println("Descrição definida: " + descricaoMulta);
+    }
+
+    public String getDescricaoMulta() {
+        return descricaoMulta;
     }
 }

@@ -23,10 +23,16 @@ public class Auditoria {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
             for (Infracao i : condutor.getInfracao()) {
-                String dataFormatada = i.getDataEmissao().format(formatter);
+                // segurança caso dataEmissao ou descricao sejam nulos
+                String dataFormatada = (i.getDataEmissao() != null)
+                        ? i.getDataEmissao().format(formatter)
+                        : "N/A";
+                String descricao = (i.getDescricaoMulta() != null) ? i.getDescricaoMulta() : "N/A";
+
                 fw.write(" - Categoria: " + i.getInfracaoCategoria() +
                         " | Multa: " + i.getMulta() + " MT" +
-                        " | Data: " + dataFormatada + "\n");
+                        " | Data: " + dataFormatada +
+                        " | Descrição: " + descricao + "\n");
             }
 
             fw.flush();
