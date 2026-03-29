@@ -1,3 +1,5 @@
+package entidades;
+
 public abstract class Pessoa {
     private String nome;
 
@@ -7,6 +9,11 @@ public abstract class Pessoa {
         this.nome = nome;
         this.telefone = telefone;
     }
+
+    /// Metodo para mostrar detalhes
+    public void mostrarDetalhes(){
+    }
+
     //Getters e Setters
     public String getNome(){
         return nome;
