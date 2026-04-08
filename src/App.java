@@ -67,7 +67,7 @@ public class App {
                 int valor = Integer.parseInt(scanner.nextLine());
                 int multaAntes = infracao.getMulta();
                 infracao.setMulta(valor);
-                System.out.println("Escreva a descricao");
+                System.out.println("descricao da multa");
                 infracao.setDescricaoMulta(scanner.nextLine());
                 if (infracao.getMulta() != multaAntes) { // só muda se foi válido
                     multaValida = true;

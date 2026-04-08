@@ -29,10 +29,10 @@ public class Auditoria {
                         : "N/A";
                 String descricao = (i.getDescricaoMulta() != null) ? i.getDescricaoMulta() : "N/A";
 
-                fw.write(" - Categoria: " + i.getInfracaoCategoria() +
-                        " | Multa: " + i.getMulta() + " MT" +
-                        " | Data: " + dataFormatada +
-                        " | Descrição: " + descricao + "\n");
+                fw.write("| Categoria: " + i.getInfracaoCategoria()+ "\n");
+                fw.write("| Multa: " + i.getMulta() +" MT" + "\n");
+                fw.write("| Data: " + dataFormatada + "\n");
+                fw.write("| Descrição: " + descricao + "\n");
             }
 
             fw.flush();

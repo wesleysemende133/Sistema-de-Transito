@@ -33,10 +33,10 @@ public  class Condutor extends Pessoa {
                     : "N/A";
             String descricao = (i.getDescricaoMulta() != null) ? i.getDescricaoMulta() : "N/A";
 
-            System.out.println("- " + i.getInfracaoCategoria() +
-                    " | Multa: " + i.getMulta() + " MT" +
-                    " | Data: " + dataFormatada +
-                    " | Descrição: " + descricao);
+            System.out.println("- " + i.getInfracaoCategoria());
+            System.out.println("Multa: " + i.getMulta() +" MT");
+            System.out.println("Data: " + dataFormatada);
+            System.out.println("Descrição: " + descricao);
         }
     }
 
