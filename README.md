@@ -218,7 +218,9 @@ cd Sistema-de-Transito
 ## 3. Compilar
 
 ```bash
-javac src/**/*.java
+find src -name "*.java" > sources.txt
+javac -d out @sources.txt
+java -cp out App
 ```
 
 ## 4. Executar
